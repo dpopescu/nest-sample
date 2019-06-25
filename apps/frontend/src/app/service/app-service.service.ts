@@ -12,6 +12,10 @@ export class AppServiceService {
   }
 
   public getMessageFromServer(): Observable<ServerResponse> {
-    return <Observable<ServerResponse>>this.http.get('/api');
+    return <Observable<ServerResponse>>this.http.get('/api', {
+      headers: {
+        'Authorization': 'Bearer TOKEN'
+      }
+    });
   }
 }
