@@ -12,14 +12,13 @@
       "tags": []
     },
     "frontend": {
-      "tags": [
-        "client"
-      ]
+      "tags": ["client"]
     },
     "backend": {
-      "tags": [
-        "server"
-      ]
+      "tags": ["server"]
+    },
+    "data": {
+      "tags": ["shared"]
     }
   }
 }

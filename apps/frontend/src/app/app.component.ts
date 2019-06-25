@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Observable} from 'rxjs';
+import {AppServiceService} from './service/app-service.service';
+import {ServerResponse} from '@nest-sample/data';
 
 @Component({
   selector: 'nest-sample-root',
@@ -6,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  messageFromServer:any;
+  messageFromServer: Observable<ServerResponse>;
+
+  constructor(private appService: AppServiceService) {
+    this.messageFromServer = appService.getMessageFromServer();
+  }
 }
