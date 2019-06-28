@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {ServerResponse} from '@nest-sample/data';
+import {ServerResponse, User} from '@nest-sample/data';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +12,10 @@ export class AppServiceService {
   }
 
   public getMessageFromServer(): Observable<ServerResponse> {
-    return <Observable<ServerResponse>>this.http.get('/api', {
-      headers: {
-        'Authorization': 'Bearer TOKEN'
-      }
-    });
+    return <Observable<ServerResponse>>this.http.get('/api');
+  }
+
+  public getUser(): Observable<User> {
+    return <Observable<User>>this.http.get('/api/user');
   }
 }

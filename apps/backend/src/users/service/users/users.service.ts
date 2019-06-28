@@ -11,4 +11,13 @@ export class UsersService {
       lastName: 'Doe'
     });
   }
+
+  public async findOneByEmail(email: string): Promise<User> {
+    return Promise.resolve({
+      id: 'abcdefgh',
+      email: 'john@doe.com',
+      firstName: 'John',
+      lastName: 'Doe'
+    });
+  }
 }
